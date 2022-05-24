@@ -41,7 +41,6 @@ export class BreedComponent implements OnInit {
       },
       complete: () => { console.log('login proceess Completed') }, 
       error: (e: any) => { 
-       console.log(e);
        this.loading = false;
      } 
    });
@@ -53,7 +52,6 @@ export class BreedComponent implements OnInit {
       const subBreedQty = obj[k].length === 0 ? '' : `see ${obj[k].length} sub-breeds`
       keys.push({name: k, subBreedQty, navigatePath: `../${k}/sub-breed`});
     }
-    console.log(keys)
     return keys;
  }
 
