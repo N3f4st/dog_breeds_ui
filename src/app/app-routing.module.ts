@@ -10,6 +10,11 @@ const routes: Routes = [
     path:'doghouse',
     loadChildren: () => import('./pages/common/common.module').then(m => m.default)
   },
+  {
+    path:'',
+    loadChildren: () => import('./pages/common/common.module').then(m => m.default)
+  },
+  
 ];
 
 @NgModule({

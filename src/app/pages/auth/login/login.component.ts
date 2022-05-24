@@ -89,7 +89,7 @@ export class LoginComponent implements OnInit {
       'Login',
       `Welcome ${name}!`
     );
-    this.routr.navigateByUrl('/doghouse/home');
+    this.routr.navigateByUrl('/doghouse/breed');
   }
 
 }

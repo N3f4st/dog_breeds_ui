@@ -1,1 +1,16 @@
-<p>home works!</p>
+<nz-layout class="layout">
+    <nz-header>
+        <img width="38px" class="app-login-img " height="38px" src="{{dogShelterPath}}"/>
+      DogHouse Shelter
+      <div style="float: right; " >
+        <button nz-button nzType="dashed" nzShape="circle" (click)="logOut()"><i nz-icon nzType="logout"></i></button>
+        <p style="line-height: 0px; margin-top: -9px; margin-left: 0px; font-size: 10px;">Logout</p>
+      </div>
+    </nz-header>
+    <nz-content>
+      <div class="inner-content">
+          <router-outlet></router-outlet>
+      </div>
+    </nz-content>
+    <nz-footer>Handcrafted with love by Juergüen Herrera</nz-footer>
+  </nz-layout>

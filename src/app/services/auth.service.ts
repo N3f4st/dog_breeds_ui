@@ -23,4 +23,7 @@ export class AuthService {
     return this.http.post(`${e.authUrl}/signup`, signVM, this.authHttpOptions);
   }
 
+  LogOut() {
+    localStorage.clear();
+  }
 }

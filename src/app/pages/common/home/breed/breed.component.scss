@@ -1,0 +1,16 @@
+nz-list {
+    height: 55vh;
+    display: block;
+    position: relative;
+    overflow: auto;
+        contain: strict;
+    transform: translateZ(0); 
+        will-change: scroll-position; 
+    -webkit-overflow-scrolling: touch;
+    padding-right: 10px;
+}
+.favorite_pic {
+    margin: 0 auto;
+    display: block;
+    margin-top: 27px;
+}
