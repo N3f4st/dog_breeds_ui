@@ -31,7 +31,8 @@ export class LoginComponent implements OnInit {
            if (resp.status === 1000) {
              const email = this.signForm.controls['email'].value; 
              this.signUpPassedEmail = ''
-             this.placeLocalStorageAndNavigate(resp.token, email, resp.fullName);
+             console.log(resp);
+             this.placeLocalStorageAndNavigate(resp.token, email, resp.fullName, (resp.favoriteSubBreed || ''),  (resp.favoriteBreed || ''));
             }
             this.changeFormControlStatus(true);
          },
@@ -81,9 +82,11 @@ export class LoginComponent implements OnInit {
     this.changeFormControlStatus(true);
   }
 
-  placeLocalStorageAndNavigate = (token: string, email: string, name: string) => {
+  placeLocalStorageAndNavigate = (token: string, email: string, name: string, favoriteSubBreed: string, favoriteBreed: string) => {
     localStorage.setItem('token', JSON.stringify(token));
     localStorage.setItem('email', JSON.stringify(email));
+    localStorage.setItem('favorite_subbreed', JSON.stringify(favoriteSubBreed));
+    localStorage.setItem('favorite_breed', JSON.stringify(favoriteBreed));
     this.notify.create(
       'success',
       'Login',

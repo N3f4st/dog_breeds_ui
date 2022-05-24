@@ -8,6 +8,10 @@ import { NzGridModule } from 'ng-zorro-antd/grid';
 import { BreedComponent } from "../home/breed/breed.component";
 import { NzLayoutModule } from 'ng-zorro-antd/layout';
 import { NzImageModule } from 'ng-zorro-antd/image';
+import { NzCardModule } from 'ng-zorro-antd/card';
+import { NzButtonModule } from 'ng-zorro-antd/button';
+import { NzIconModule } from "ng-zorro-antd/icon";
+
 import { CommonModule } from "@angular/common";
 
 import { AuthGuard } from "src/app/guards/auth.guard";
@@ -15,12 +19,13 @@ import { DogApiService } from "src/app/services/dog-api.service";
 import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
 import { StatusInterceptor } from "src/app/interceptors/status.interceptor";
 import { TokenInterceptor } from "src/app/interceptors/token.interceptor";
+import { GetImgaSrcPipe } from "src/app/pipes/get-imga-src.pipe";
 
 
 const routes : Routes = [
 
   {
-    path: 'sub-breed',
+    path: ':breed/sub-breed',
     component: SubBreedComponent,
     canActivate: [AuthGuard]
   },
@@ -49,9 +54,12 @@ const routes : Routes = [
      NzLayoutModule,
      CommonModule,
      HttpClientModule, 
-     NzImageModule
+     NzImageModule,
+     NzCardModule,
+     NzButtonModule,
+     NzIconModule
     ],
-  declarations: [ SubBreedComponent, BreedComponent],
+  declarations: [ SubBreedComponent, BreedComponent, GetImgaSrcPipe],
   providers: [
     DogApiService,
     {

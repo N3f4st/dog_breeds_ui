@@ -1,1 +1,17 @@
-<p>sub-breed works!</p>
+<p style="text-align: center; width: 80%; margin: 0 auto;  font-weight: 800; color: #2f2c2c;">{{ searchedBreed }} Breed</p>
+
+<div class="container" >
+    <div *ngFor="let subBreed of subBreedList">
+    <nz-card style="width:300px; float: left; margin: 10px;" [nzCover]="coverTemplate">
+            <nz-card-meta
+            nzTitle="{{ subBreed.name }}"
+            ></nz-card-meta>
+                <button nz-button nzType="dashed" [nzLoading]="requestAlive" class="fav-button" (click)="setAsFavorite(subBreed.pipable)" nzShape="circle" ><i nz-icon nzType="heart"></i></button>
+        </nz-card>
+
+        <ng-template #coverTemplate>
+            <img alt="example" src="{{ subBreed.pipable | getImgaSrc | async }}" />
+        </ng-template>
+    </div>
+    
+</div>

@@ -37,7 +37,7 @@ export class SignUpComponent implements OnInit {
             }
             this.changeFormControlStatus(true);
          },
-         complete: () => { console.log('login proceess Completed') }, 
+         complete: () => { console.log('signup proceess Completed') }, 
          error: (e: any) => { 
           if (e.error.status === 1012) {
             this.signUpForm.controls['email'].setValue('');

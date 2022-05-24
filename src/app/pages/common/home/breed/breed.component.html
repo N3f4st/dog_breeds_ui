@@ -10,7 +10,7 @@
                     </nz-list-item-meta-title>
                 </nz-list-item-meta>
                 <ul nz-list-item-actions>
-                    <nz-list-item-action><a >{{ breed.subBreedQty  }}</a></nz-list-item-action>
+                    <nz-list-item-action><a routerLink="{{ breed.navigatePath }}">{{ breed.subBreedQty  }}</a></nz-list-item-action>
                 </ul>
             </nz-list-item>
             <nz-list-footer>{{breedList.length}} dog breeds</nz-list-footer>
@@ -20,6 +20,7 @@
         
     </div>
     <div nz-col nzSpan="12">
+        <p style="    font-weight: 600; text-align: center;">{{ breedSubBreed }}</p>
         <img
             nz-image
             class="favorite_pic"

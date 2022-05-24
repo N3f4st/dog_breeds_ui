@@ -1,0 +1,19 @@
+
+.container {
+    height: 55vh;
+    display: block;
+    position: relative;
+    overflow: auto;
+    contain: strict;
+    transform: translateZ(0); 
+    will-change: scroll-position; 
+    -webkit-overflow-scrolling: touch;
+    padding-right: 10px;
+    margin: 0 auto;
+}
+
+.fav-button {
+    right: 20px !important;
+    position: absolute;
+    bottom: 17px;
+}
